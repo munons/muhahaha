@@ -1,0 +1,144 @@
+/* =========================================
+   TERMINAL CSS FINAL (Responsive & Clean)
+   ========================================= */
+
+/* Reset & Base */
+* { 
+    box-sizing: border-box; 
+    -webkit-tap-highlight-color: transparent;
+}
+
+body { 
+    margin: 0; 
+    background: #300a24; /* Warna khas Ubuntu */
+    color: #eaeaea; 
+    font-family: 'Monaco', 'Consolas', 'Courier New', monospace; 
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px; 
+    overflow: hidden; 
+}
+
+/* Terminal Window Container */
+.terminal-window { 
+    width: 100%; 
+    max-width: 900px; 
+    height: 85vh; 
+    background: #1e1e1e; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 20px 50px rgba(0,0,0,.6); 
+    display: flex; 
+    flex-direction: column; 
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Topbar / Header */
+.topbar { 
+    background: #333333; 
+    padding: 10px 15px; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    flex-shrink: 0; 
+    user-select: none;
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.title { 
+    margin-left: 10px; 
+    color: #999; 
+    font-size: 0.85rem; 
+    letter-spacing: 0.5px;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+/* Output Area (History Chat/Command) */
+.output {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    font-family: 'Consolas', monospace;
+    font-size: 15px;      /* Ukuran standar terminal */
+    line-height: 1.6;     /* Kunci teks enak dilihat */
+    color: #eaeaea;      /* Putih yang agak soft agar mata tidak sakit */
+    white-space: pre-wrap;
+    word-break: break-word;
+    scrollbar-width: thin;
+    scrollbar-color: #444 transparent;
+}
+
+
+/* Kustomisasi Scrollbar untuk Chrome/Safari */
+.output::-webkit-scrollbar { width: 6px; }
+.output::-webkit-scrollbar-thumb { background: #444; border-radius: 10px; }
+
+/* Input Area (Bagian Bawah) */
+.input-row { 
+    display: flex;
+    align-items: center; /* Kunci agar teks & kursor sejajar horizontal */
+    gap: 10px; 
+    padding: 15px 20px; 
+    background: #1e1e1e;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.prompt { 
+    color: #33ff33; 
+    white-space: nowrap; 
+    font-weight: bold;
+    flex-shrink: 0; /* Mencegah prompt 'tor@stalker:~$' terpotong atau turun */
+}
+
+input { 
+    flex: 1; 
+    background: transparent; 
+    border: none; 
+    color: #1e1e1e; /* Warna ketikan input putih */
+    font-family: inherit; 
+    font-size: 1rem; 
+    outline: none; 
+    padding: 0;
+    margin: 0;
+    caret-color: #1e1e1e; /* Warna kursor ketik putih */
+    width: 100%;
+}
+
+/* Responsive Styles untuk Mobile */
+@media (max-width: 500px) {
+    .terminal-window { 
+        height: 50vh; 
+        border-radius: 8px;
+    }
+    
+    .output { 
+        padding: 15px; 
+        font-size: 0.9rem; 
+    }
+
+    .input-row {
+        padding: 12px 15px;
+    }
+    
+    .title {
+        font-size: 0.75rem;
+    }
+}
+
+/* Perbaikan khusus untuk HP layar sangat kecil */
+@media (max-width: 400px) {
+    .prompt {
+        font-size: 0.85rem;
+    }
+    input {
+        font-size: 0.9rem;
+    }
+}

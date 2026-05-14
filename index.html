@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal Stalker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="terminal-window">
+    <header class="topbar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="title">visitor@stalker: ~</span>
+    </header>
+    <section id="output" class="output"></section>
+    <div class="input-row">
+      <span class="prompt">visitor@stalker:~$</span>
+      <input id="cmd" autocomplete="off" autofocus />
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
